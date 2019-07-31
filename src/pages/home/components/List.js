@@ -10,7 +10,9 @@ class List extends PureComponent {
             <div>
                 {
                     articleList.map((item, index) => (
-                        <Link key={index} to="/detail">
+                        // 可以使用 "/detail?id=" + item.get('id') 进行跳转
+                        // 但是需要使用 this.props.location.search 获取并且需要解析
+                        <Link key={index} to={"/detail/" + item.get('id')}>
                             <ListItem>
                                 <img className="pic" src={item.get('imgUrl')} alt="图片"/>
                                 <ListInfo>
