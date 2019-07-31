@@ -7,9 +7,7 @@ export const HeaderWrapper = styled.div`
     border-bottom: 1px solid #f0f0f0;
 `
 
-export const Logo = styled.a.attrs({
-    href: '/'
-})`
+export const Logo = styled.div`
     position: absolute;
     top: 0;
     left: 0;
@@ -51,7 +49,7 @@ export const SearchWrapper = styled.div`
     position: relative;
     float: left;
 
-    .iconfont {
+    .zoom {
         position: absolute;
         right: 5px;
         bottom: 5px;
@@ -112,6 +110,17 @@ export const SearchInfo = styled.div`
     padding: 0 20px;
     background: #fff;
     box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    &:before {
+        content: "";
+        left: 27px;
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        top: -5px;
+        z-index: -1;
+    }
 `
 
 export const SearchInfoTitle = styled.div`
@@ -129,6 +138,16 @@ export const SearchInfoList = styled.div`
 export const SearchInfoSwitch = styled.span`
     float: right;
     font-size: 13px;
+    cursor: pointer;
+    .spin {
+        display: block;
+        float: left;
+        font-size: 12px;
+        margin-right: 2px;
+        transition: all .4s ease-in;
+        transform: rotate(0deg);
+        transform-origin: center center;
+    }
 `
 
 export const SearchInfoItem = styled.a`
